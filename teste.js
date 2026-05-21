@@ -8,7 +8,7 @@ function sistema(){
         selecionarOpcoes = Number (prompt("\n=== SISTEMA ===\n 1 - CADASTRAR USUÁRIO\n 2 - LISTAR USUÁRIO\n 3 - MODIFICAR USUÁRIO\n 4 - REMOVER USUÁRIO\n 5 - FINALIZAR\n:"));
 
         if(selecionarOpcoes == 1){
-            console.log("1");
+            cadastrarUsuario();
         }
         else if(selecionarOpcoes == 2){
             console.log("2");
@@ -30,8 +30,20 @@ function sistema(){
 function cadastrarUsuario(){
 
     let finalizarCadastro = 0;
-    while(finalizarCadastro != 2){
+    while(true){
 
+        let nomeUsuario = prompt("Nome: ");
+        let idadeUsuario = prompt("Idade: ");
+        console.log("Usuário Cadastrado!");
+
+        let opcoesCadastro = Number(prompt("\nDeseja cadastrar outro usuário?\n 1 - CADASTRAR NOVO USUÁRIO\n 2 - SAIR\n: "));
+        
+        if(opcoesCadastro == 1){
+            continue;
+        }
+        else if(opcoesCadastro == 2){
+            break;
+        }
     
     }
 }
