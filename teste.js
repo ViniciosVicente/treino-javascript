@@ -1,7 +1,9 @@
 const prompt = require('prompt-sync')();
+let usuarios = [];
+
 
 function sistema(){
-   
+    
     let selecionarOpcoes = 0;
 
     while (true) {
@@ -29,11 +31,17 @@ function sistema(){
 
 function cadastrarUsuario(){
 
+    let cadastros = {};
     let finalizarCadastro = 0;
+
     while(true){
 
-        let nomeUsuario = prompt("Nome: ");
-        let idadeUsuario = prompt("Idade: ");
+        cadastros = {
+
+            nome: prompt("Nome: "),
+            idade: Number(prompt("Idade: "))
+        }
+        usuarios.push(cadastros);
         console.log("Usuário Cadastrado!");
 
         let opcoesCadastro = Number(prompt("\nDeseja cadastrar outro usuário?\n 1 - CADASTRAR NOVO USUÁRIO\n 2 - SAIR\n: "));
@@ -44,8 +52,12 @@ function cadastrarUsuario(){
         else if(opcoesCadastro == 2){
             break;
         }
-    
     }
+    
+   
+
+    
+    console.log(usuarios);
 }
 
 
