@@ -13,7 +13,7 @@ function sistema(){
             cadastrarUsuario();
         }
         else if(selecionarOpcoes == 2){
-            console.log("2");
+            listarUsuarios();
         }
         else if(selecionarOpcoes == 3){
             console.log("3");
@@ -54,11 +54,15 @@ function cadastrarUsuario(){
         }
     }
     
-   
-
-    
     console.log(usuarios);
 }
 
-
+function listarUsuarios(){
+    console.log("=== LISTAR USUÁRIOS ===");
+    for(let usuario of usuarios){
+        console.log("Nome: " , usuario.nome);
+        console.log("Idade: " , usuario.idade , "\n");
+    }
+    
+}
 sistema();
