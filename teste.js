@@ -1,6 +1,6 @@
 const prompt = require('prompt-sync')();
 let usuarios = [];
-
+let proximoID = 1;
 
 function sistema(){
     
@@ -19,7 +19,7 @@ function sistema(){
             console.log("3");
         }
         else if(selecionarOpcoes == 4){
-            console.log("4");
+            atualizarUsuario();
         }
         else if(selecionarOpcoes == 5){
             break;
@@ -33,16 +33,19 @@ function cadastrarUsuario(){
 
     let cadastros = {};
     let finalizarCadastro = 0;
+    
 
     while(true){
 
+        
         cadastros = {
-
+            id: proximoID,
             nome: prompt("Nome: "),
             idade: Number(prompt("Idade: "))
         }
         usuarios.push(cadastros);
         console.log("Usuário Cadastrado!");
+        proximoID++;
 
         let opcoesCadastro = Number(prompt("\nDeseja cadastrar outro usuário?\n 1 - CADASTRAR NOVO USUÁRIO\n 2 - SAIR\n: "));
         
@@ -64,5 +67,12 @@ function listarUsuarios(){
         console.log("Idade: " , usuario.idade , "\n");
     }
     
+}
+
+function atualizarUsuario(){
+    console.log("=== ATUALIZAR USUÁRIO ===\n");
+    for(usuarioAtualizar of usuarios){
+        console.log(`ID: ${usuarioAtualizar.id}\nNome: ${usuarioAtualizar.nome}\nIdade: ${usuarioAtualizar.idade}`);
+    }
 }
 sistema();
