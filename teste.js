@@ -16,10 +16,10 @@ function sistema(){
             listarUsuarios();
         }
         else if(selecionarOpcoes == 3){
-            console.log("3");
+            atualizarUsuario();
         }
         else if(selecionarOpcoes == 4){
-            atualizarUsuario();
+            
         }
         else if(selecionarOpcoes == 5){
             break;
@@ -73,6 +73,24 @@ function atualizarUsuario(){
     console.log("=== ATUALIZAR USUÁRIO ===\n");
     for(usuarioAtualizar of usuarios){
         console.log(`ID: ${usuarioAtualizar.id}\nNome: ${usuarioAtualizar.nome}\nIdade: ${usuarioAtualizar.idade}`);
+        console.log("")
+    }
+
+    let idBuscar = Number(prompt("Digite o ID do usuário que você deseja modificar\n: "));
+
+    for(usuarioModificar of usuarios){
+
+        if(usuarioModificar.id === idBuscar){
+           
+            usuarioModificar.nome = prompt("\nNome(Novo): ");
+            usuarioModificar.idade = Number(prompt("Idade(Novo): "));
+
+            console.log("Usuário Atualizado!");
+
+            return;
+        }
     }
 }
+
+
 sistema();
