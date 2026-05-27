@@ -90,13 +90,16 @@ function atualizarUsuario(){
             return;
         }
     }
-
+}
     function removerUsuario(){
 
         console.log("=== REMOVER USUÁRIO ===");
-        
+        for(let usuarioRemover of usuarios){console.log(`ID: ${usuarioRemover.id}\nNome: ${usuarioRemover.nome}\n`);}
+
+        let idRemover = Number(prompt("Digite o ID que deseja remover\n: "));
+        usuarios = usuarios.filter(usuario => usuario.id !== idRemover);
     }
-}
+
 
 
 sistema();
