@@ -19,7 +19,7 @@ function sistema(){
             atualizarUsuario();
         }
         else if(selecionarOpcoes == 4){
-            
+            removerUsuario();
         }
         else if(selecionarOpcoes == 5){
             break;
@@ -89,6 +89,12 @@ function atualizarUsuario(){
 
             return;
         }
+    }
+
+    function removerUsuario(){
+
+        console.log("=== REMOVER USUÁRIO ===");
+        
     }
 }
 
